@@ -19,8 +19,10 @@ function Footer() {
 
   useEffect(() => {
     window.addEventListener('scroll', checkScrollTop);
+
+    // Cleanup function to remove event listener on component unmount
     return () => window.removeEventListener('scroll', checkScrollTop);
-  }, [showScroll]);
+  }, [showScroll]); // Make sure to include `showScroll` as a dependency
 
   return (
     <>
